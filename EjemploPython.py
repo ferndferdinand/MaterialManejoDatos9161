@@ -7,3 +7,6 @@ print(f"Resultado de {x} + {y} = {x+y}")
 
 print(f"Resultado de {x} - {y} = {x-y}")
 print(f"Resultado de {x} / {y} = {x/y}")
+
+
+print("Cambio hecho por ErickVG")
