@@ -1,6 +1,6 @@
-# README
+# GIT
 
-Repositorio del material de clase de Manejo de Datos 2024-1
+Material sobre GIT.
 
-
-estamos editando
+- Git.html (Manual de GIT listo para consultar)
+- EjemploPython.py (Archivo de python que usamos para editar y hacer commits en GIT
