@@ -14,15 +14,14 @@ print(lista)
 lista = [8, 7, 43, 38, 30, 2, -11, 17, -10, -5]
 
 
-#%%
-#-------------------------Ordenamiento burbuja------------------------
+# %%
+# -------------------------Ordenamiento burbuja------------------------
 
 def burbuja(lista):
     for i in range(len(lista)):
-        for j in range(len(lista)-1):
-            if lista[j] > lista[j+1]:
-                lista[j], lista[j+1] = lista[j+1], lista[j]
-            
+        for j in range(len(lista) - 1):
+            if lista[j] > lista[j + 1]:
+                lista[j], lista[j + 1] = lista[j + 1], lista[j]
 
 
 def burbuja_mejorado(lista):
@@ -30,59 +29,55 @@ def burbuja_mejorado(lista):
     cambios = True
     while cambios and i < len(lista):
         cambios = False
-        for j in range(len(lista)-i-1):
-            if lista[j] > lista[j+1]:
-                lista[j], lista[j+1] = lista[j+1], lista[j]
+        for j in range(len(lista) - i - 1):
+            if lista[j] > lista[j + 1]:
+                lista[j], lista[j + 1] = lista[j + 1], lista[j]
                 cambios = True
         i += 1
-        
-#%%
-#-------------------------Ordenamiento por selección------------------------
+
+# %%
+# -------------------------Ordenamiento por selección------------------------
+
 
 def seleccion_con_lista_aux(lista):
     listaOrdenada = []
-    for i in range(len(lista)):             #O(n)
+    for i in range(len(lista)):  # O(n)
         menor = lista[0]
-        for j in range(len(lista)):         #O(n-1)
-            
+        for j in range(len(lista)):  # O(n-1)
+
             if menor >= lista[j]:
                 menor = lista[j]
-            
+
         lista.remove(menor)
         listaOrdenada.append(menor)
     return listaOrdenada
 
 
-
 def seleccion1(lista):
-    k = 0
-    for i in range(len(lista)):             #O(n)
+    for i in range(len(lista)):  # O(n)
         menor = i
-        for j in range(i+1, len(lista)):         #O(n-1)
+        for j in range(i + 1, len(lista)):  # O(n-1)
             if lista[menor] > lista[j]:
                 menor = j
         lista[i], lista[menor] = lista[menor], lista[i]
 
 
-
-
 def seleccion(lista):
-    for i in range(len(lista)):             #O(n)
-        for j in range(i+1, len(lista)):         #O(n-1)
+    for i in range(len(lista)):  # O(n)
+        for j in range(i + 1, len(lista)):  # O(n-1)
             if lista[i] > lista[j]:
                 lista[i], lista[j] = lista[j], lista[i]
 
 
-
-#%%
-#-------------------------Ordenamiento por inserción------------------------
+# %%
+# -------------------------Ordenamiento por inserción------------------------
 def insercion(lista):
-    for i in range(1,len(lista)):
+    for i in range(1, len(lista)):
         aux = lista[i]
         indice = i
-        
-        while indice > 0 and aux < lista[indice-1]:
-            lista[indice] = lista[indice-1]
+
+        while indice > 0 and aux < lista[indice - 1]:
+            lista[indice] = lista[indice - 1]
             indice -= 1
         lista[indice] = aux
         """
@@ -94,19 +89,3 @@ def insercion(lista):
             indice -= 1
             lista[j] = aux
         """
-            
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
