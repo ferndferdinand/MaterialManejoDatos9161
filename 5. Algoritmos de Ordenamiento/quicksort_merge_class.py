@@ -41,6 +41,38 @@ class QuickSort(OrdenableIterativoAbstractClass):
         return self.ordenar(menores) + [pivote] + self.ordenar(mayores)
 
 
+class QuickSortSinLista(OrdenableIterativoAbstractClass):
+
+    def dividir_elementos(self, elementos):
+        pivote = elementos[0]
+        pos_izq = 1
+        pos_der = len(elementos) - 1
+
+        while True:
+            while pos_izq <= pos_der and elementos[pos_izq] <= pivote:
+                pos_izq += 1
+            while pos_izq <= pos_der and elementos[pos_der] >= pivote:
+                pos_der -= 1
+
+            if pos_der < pos_izq:
+                break
+
+            else:
+                self.intercambiar(elementos, pos_izq, pos_der)
+        self.intercambiar(elementos, 0, pos_der)
+
+        return pos_der
+
+    def ordenar(self, elementos):
+        if len(elementos) > 1:
+            pos_pivote = self.dividir_elementos(elementos)
+            elementos[:pos_pivote] = self.ordenar(elementos[:pos_pivote])
+            elementos[pos_pivote +
+                      1:] = self.ordenar(elementos[pos_pivote + 1:])
+
+        return elementos
+
+
 class Merge(OrdenableIterativoAbstractClass):
 
     def merge(self, izq, der):
