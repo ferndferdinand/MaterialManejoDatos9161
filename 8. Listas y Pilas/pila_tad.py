@@ -30,7 +30,7 @@ class PilaABC(ABC):
 
     @abstractmethod
     def __str__(self):
-        return self.pila
+        pass
 
 
 class Pila(PilaABC):
@@ -53,6 +53,9 @@ class Pila(PilaABC):
 
     def esta_vacia(self):
         return self.elementos == 0
+
+    def __str__(self):
+        return self.pila
 
 
 # Script de prueba Pila
